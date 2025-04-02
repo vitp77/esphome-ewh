@@ -29,8 +29,6 @@ preferences:
 
 wifi:
   ap:
-    ssid: "$name hotspot"
-    password: $wifi_ap_password
 captive_portal:
 
 ota:
