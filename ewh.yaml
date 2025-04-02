@@ -6,7 +6,7 @@ substitutions:
   node_name: "water-heater"
 
   ## time platform: "sntp" for MQTT or "homeassistant" for API
-  time_platform: "homeassistant"
+  time_platform: "sntp"
 
   ## SSID of your wifi
   wifi_ssid: !secret wifi_ssid
@@ -22,7 +22,7 @@ substitutions:
 ## Please do not change packages order it is very important, just comment/uncomment
 packages:
   remote:
-    url: https://github.com/dentra/esphome-ewh
+    url: https://github.com/vitp77/esphome-ewh
     ref: master # cant use substitutions here
     files:
       ## Enable additional WiFi signal sensor. Comment next line to disable.
@@ -32,26 +32,26 @@ packages:
       ## Uncomment next line to enable additional restart button.
       - packages/restart.yaml
       ## Uncomment next line to enable additional diagnostic clock sensor
-      # - packages/clock.yaml
+      - packages/clock.yaml
       ## Uncomment next line to enable additional diagnostic timer sensor
-      # - packages/timer.yaml
+      - packages/timer.yaml
       ## Uncomment next line to enable standalone web ui
-      # - packages/ewh_web.yaml
+      - packages/ewh_web.yaml
       ## optional package, uncomment next line to enable experimental cloud support
       # - packages/cloud.yaml
       # Required package, do not comment move or remove
       - packages/base.yaml
       # Required package, replace with esp32.yaml/esp8266.yaml if you use ESP32/ESP8266
-      - packages/esp32_s3.yaml
+      - packages/esp8266.yaml
 
 ## Enable Home Assistant API connection. Please comment if you plan to use MQTT.
 api:
 
 ## Uncomment to enable MQTT connection.
-# mqtt:
-#   broker: !secret mqtt_borker
-#   username: !secret mqtt_username
-#   password: !secret mqtt_password
+mqtt:
+   broker: !secret mqtt_borker
+   username: !secret mqtt_username
+   password: !secret mqtt_password
 
 # WiFi hotspot configuration.
 # Comment next 3 lines to enable manual WiFi configuration via access point.
