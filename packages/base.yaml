@@ -4,7 +4,7 @@ substitutions:
   # project_version: $project_branch
   project_version: 2025-master
   # project git source
-  project_source: github://dentra/esphome-ewh@$project_branch
+  project_source: github://vitp77/esphome-ewh@$project_branch
   # project source refresh interval
   project_source_refresh: 12h
   # node name
@@ -18,10 +18,10 @@ esphome:
   name: $node_name
   friendly_name: $friendly_name
   name_add_mac_suffix: $node_add_mac_suffix
-  comment: https://t.me/dentra_blog
-  project:
-    name: "dentra.ewh-$framework_type-$board"
-    version: "$project_version"
+#  comment: https://t.me/dentra_blog
+#  project:
+#    name: "dentra.ewh-$framework_type-$board"
+#    version: "$project_version"
   min_version: "2024.12.4" # can't use substitutions here
 
 preferences:
@@ -29,6 +29,8 @@ preferences:
 
 wifi:
   ap:
+    ssid: "$name hotspot"
+    password: $wifi_ap_password
 captive_portal:
 
 ota:
@@ -38,9 +40,9 @@ logger:
   # Make sure logging is not using the serial port
   baud_rate: 0
 
-external_components:
-  - source: github://dentra/esphome-components@2023.2.0
-    components: [crash_info, etl, otax, vport, esp32_usb_dis]
-    refresh: 1d
-  - source: $project_source
-    refresh: $project_source_refresh
+#external_components:
+#  - source: github://dentra/esphome-components@2023.2.0
+#    components: [crash_info, etl, otax, vport, esp32_usb_dis]
+#    refresh: 1d
+#  - source: $project_source
+#    refresh: $project_source_refresh
