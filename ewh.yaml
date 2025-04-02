@@ -16,8 +16,8 @@ substitutions:
   wifi_ap_password: !secret wifi_ap_password
 
   ## UART configuration.
-  tx_pin: GPIO19 # use TX for iot-uni-dongle or coolrf-heatstick
-  rx_pin: GPIO20 # use RX for iot-uni-dongle or coolrf-heatstick
+  tx_pin: TX # use TX for iot-uni-dongle or coolrf-heatstick
+  rx_pin: RX # use RX for iot-uni-dongle or coolrf-heatstick
 
 ## Please do not change packages order it is very important, just comment/uncomment
 packages:
@@ -61,6 +61,7 @@ wifi:
 
 time:
   - platform: $time_platform
+    timezone: MSK-3
 
 uart:
   - tx_pin: $tx_pin
