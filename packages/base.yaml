@@ -12,7 +12,7 @@ substitutions:
   # name for main entity and prefix for all others.
   friendly_name: $node_name
   # add suffix for node name to have one firmware for many devices.
-  node_add_mac_suffix: "true"
+  # node_add_mac_suffix: "true"
 
 esphome:
   name: $node_name
