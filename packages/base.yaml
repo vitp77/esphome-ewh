@@ -12,12 +12,12 @@ substitutions:
   # name for main entity and prefix for all others.
   friendly_name: $node_name
   # add suffix for node name to have one firmware for many devices.
-  # node_add_mac_suffix: "true"
+  node_add_mac_suffix: "true"
 
 esphome:
   name: $node_name
   friendly_name: $friendly_name
-  name_add_mac_suffix: $node_add_mac_suffix
+  # name_add_mac_suffix: $node_add_mac_suffix
   comment: https://t.me/dentra_blog
   project:
     name: "dentra.ewh-$framework_type-$board"
