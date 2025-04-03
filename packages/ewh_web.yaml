@@ -40,7 +40,7 @@ number:
     internal: true
     name: Target Temperature
     min_value: 35
-    max_value: 70
+    max_value: 75
     step: 1
     lambda: return id(whc).target_temperature;
     set_action:
