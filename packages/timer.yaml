@@ -21,3 +21,5 @@ ewh:
   on_state:
     then:
       - lambda: id(wh_timer).publish_state(str_snprintf("%02u:%02u", 5, state.timer_hours, state.timer_minutes));
+      - lambda: id(wh_timer_hours).publish_state(str_snprintf("%02u", 2, state.timer_hours));
+      - lambda: id(wh_timer_minutes).publish_state(str_snprintf("%02u", 2, state.timer_minutes));
