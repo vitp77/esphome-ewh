@@ -1,9 +1,9 @@
 substitutions:
   ## Main prefix for all entities
-  friendly_name: "Water Heater"
+  friendly_name: "Electrolux WH"
   ## Name of the node. Don't use underscores!
   ## https://esphome.io/guides/faq.html#why-shouldn-t-i-use-underscores-in-my-device-name
-  node_name: "water-heater"
+  node_name: "electrolux-wh"
 
   ## time platform: "sntp" for MQTT or "homeassistant" for API
   time_platform: "sntp"
@@ -42,16 +42,21 @@ packages:
       # Required package, do not comment move or remove
       - packages/base.yaml
       # Required package, replace with esp32.yaml/esp8266.yaml if you use ESP32/ESP8266
-      - packages/esp8266.yaml
+      #- packages/esp8266.yaml
+
+esp8266:
+  board: "esp12e"
+  restore_from_flash: "true"
 
 ## Enable Home Assistant API connection. Please comment if you plan to use MQTT.
 api:
 
 ## Uncomment to enable MQTT connection.
 mqtt:
-   broker: !secret mqtt_borker
-   username: !secret mqtt_username
-   password: !secret mqtt_password
+  broker: !secret mqtt_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  discovery: false
 
 # WiFi hotspot configuration.
 # Comment next 3 lines to enable manual WiFi configuration via access point.
@@ -84,4 +89,3 @@ climate:
 #   id: cloud
 #   mac: !secret cloud_mac
 #   uid: !secret cloud_uid
-
