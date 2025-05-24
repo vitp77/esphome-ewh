@@ -40,7 +40,7 @@ logger:
   baud_rate: 0
 
 external_components:
-  - source: https://github.com/dentra/esphome-components
+  - source: https://github.com/dentra/esphome-components@master
     components: [crash_info, etl, otax, vport, esp32_usb_dis]
     refresh: 1d
   - source: $project_source
