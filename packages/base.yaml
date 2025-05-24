@@ -4,8 +4,8 @@ substitutions:
   # project_version: $project_branch
   project_version: 2025-master
   # project git source
-  project_source: github://dentra/esphome-ewh@$project_branch
-  #project_source: github://vitp77/esphome-ewh@$project_branch
+  #project_source: github://dentra/esphome-ewh@$project_branch
+  project_source: github://vitp77/esphome-ewh@$project_branch
   # project source refresh interval
   project_source_refresh: 1h
   # node name
